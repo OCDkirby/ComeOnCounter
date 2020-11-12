@@ -8,6 +8,6 @@ The SHSU Come On Counter for the bored people in Special Topics.
 * Windows (?)
 * Java 8 update 112
 # Releases
-* [Release 2.0 (11/11/2020)](https://drive.google.com/file/d/1XSGZ1y5LaEymbxgFL-gFLTALgK6R2gke/view?usp=sharing): New feature, Gabriel Counter
-* [Release 1.9 (10/21/2020)](https://drive.google.com/file/d/1AURFQbHkcC8HAc2CViHfRD-UGCfn4Qpo/view?usp=sharing): Bugfixes
-* [Release 1.8 (10/15/2020)](https://drive.google.com/file/d/1kVbUn2Iet79u473M4oz6qeTjnWjy3snf/view?usp=sharing): First archived release
+* [Release 2.0 (11/11/2020)](https://github.com/OCDkirby/ComeOnCounter/releases/tag/2.0): New feature, Gabriel Counter
+* [Release 1.9 (10/21/2020)](https://github.com/OCDkirby/ComeOnCounter/releases/tag/1.9): Bugfixes
+* [Release 1.8 (10/15/2020)](https://github.com/OCDkirby/ComeOnCounter/releases/tag/1.8): First archived release
