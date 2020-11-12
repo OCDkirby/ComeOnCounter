@@ -18,16 +18,25 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable
 {
-    private int record = 0;
-    private int last = 0;
-    private int current = 0;
+    private int comeOnRecord = 0;
+    private int comeOnLast = 0;
+    private int comeOnCurrent = 0;
+    private int gabeRecord = 0;
+    private int gabeLast = 0;
+    private int gabeCurrent = 0;
 
     private File file;
 
-    public Label recordLabel;
-    public Label lastLabel;
-    public Label currentLabel;
+    public Label comeOnRecordLabel;
+    public Label comeOnLastLabel;
+    public Label comeOnCurrentLabel;
     public Button comeOn;
+
+    public Label gabeRecordLabel;
+    public Label gabeLastLabel;
+    public Label gabeCurrentLabel;
+    public Button gabe;
+
     public Button save;
 
     @Override
@@ -41,19 +50,25 @@ public class Controller implements Initializable
             {
                 InputStream in = file.toURI().toURL().openStream();
                 BufferedReader br = new BufferedReader(new InputStreamReader(in));
-                String rec = br.readLine();
-                String l = br.readLine();
+                String crec = br.readLine();
+                String cl = br.readLine();
+                String grec = br.readLine();
+                String gl = br.readLine();
 
                 br.close();
                 in.close();
 
-                record = Integer.parseInt(rec);
-                last = Integer.parseInt(l);
+                comeOnRecord = Integer.parseInt(crec);
+                comeOnLast = Integer.parseInt(cl);
+                gabeRecord = Integer.parseInt(grec);
+                gabeLast = Integer.parseInt(gl);
             }
             else
             {
-                record = 11;
-                last = 9;
+                comeOnRecord = 18;
+                comeOnLast = 15;
+                gabeRecord = 0;
+                gabeLast = 0;
             }
         }
         catch(IOException e)
@@ -61,9 +76,13 @@ public class Controller implements Initializable
             e.printStackTrace();
         }
 
-        recordLabel.setText("Record: " + record);
-        lastLabel.setText("Last class: " + last);
-        currentLabel.setText("Current: " + current);
+        comeOnRecordLabel.setText("Record: " + comeOnRecord);
+        comeOnLastLabel.setText("Last class: " + comeOnLast);
+        comeOnCurrentLabel.setText("Current: " + comeOnCurrent);
+        
+        gabeRecordLabel.setText("Record: " + gabeRecord);
+        gabeLastLabel.setText("Last class: " + gabeLast);
+        gabeCurrentLabel.setText("Current: " + gabeCurrent);
     }
 
     public void saveToFile()
@@ -72,18 +91,32 @@ public class Controller implements Initializable
         {
             PrintWriter out = new PrintWriter(file);
 
-            if(current != 0)
+            if(comeOnCurrent != 0)
             {
-                if(current > record)
-                record = current;
+                if(comeOnCurrent > comeOnRecord)
+                    comeOnRecord = comeOnCurrent;
 
-                out.println(record);
-                out.print(current);
+                out.println(comeOnRecord);
+                out.println(comeOnCurrent);
             }
             else
             {
-                out.println(record);
-                out.print(last);
+                out.println(comeOnRecord);
+                out.println(comeOnLast);
+            }
+
+            if(gabeCurrent != 0)
+            {
+                if(gabeCurrent > gabeRecord)
+                    gabeRecord = gabeCurrent;
+
+                out.println(gabeRecord);
+                out.print(gabeCurrent);
+            }
+            else
+            {
+                out.println(gabeRecord);
+                out.println(gabeLast);
             }
 
             out.close();
@@ -98,22 +131,37 @@ public class Controller implements Initializable
     {
         if(event.getSource() == comeOn)
         {
-            current++;
-            currentLabel.setText("Current: " + current);
+            comeOnCurrent++;
+            comeOnCurrentLabel.setText("Current: " + comeOnCurrent);
+        }
+        else if(event.getSource() == gabe)
+        {
+            gabeCurrent++;
+            gabeCurrentLabel.setText("Current: " + gabeCurrent);
         }
         else if(event.getSource() == save)
         {
             saveToFile();
 
-            if(current != 0)
+            if(comeOnCurrent != 0)
             {
-                last = current;
+                comeOnLast = comeOnCurrent;
+            }
+            
+            if(gabeCurrent != 0)
+            {
+                gabeLast = gabeCurrent;
             }
 
-            recordLabel.setText("Record: " + record);
-            lastLabel.setText("Last class: " + last);
-            current = 0;
-            currentLabel.setText("Current: " + current);
+            comeOnRecordLabel.setText("Record: " + comeOnRecord);
+            comeOnLastLabel.setText("Last class: " + comeOnLast);
+            comeOnCurrent = 0;
+            comeOnCurrentLabel.setText("Current: " + comeOnCurrent);
+            
+            gabeRecordLabel.setText("Record: " + gabeRecord);
+            gabeLastLabel.setText("Last class: " + gabeLast);
+            gabeCurrent = 0;
+            gabeCurrentLabel.setText("Current: " + gabeCurrent);
         }
     }
 }
