@@ -1,5 +1,5 @@
 # ComeOnCounter
-The SHSU Come On Counter for the bored people in Special Topics.
+The Come On Counter for the bored people in Special Topics.
 # Current functionality
 * JavaFX application, creates a single text file called Counts.txt to store ~~two~~ four values: comeOnRecord, comeOnLast, gabeRecord, and gabeLast
 # Planned functionality
