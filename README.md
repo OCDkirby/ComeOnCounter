@@ -1,5 +1,5 @@
 # Corny Joke Counter
-The Come Joke Counter for the bored people in Data Structures.
+The Corny Joke Counter for the bored people in Data Structures.
 # Current functionality
 * JavaFX application, creates a single text file called Counts.txt to store two values: jokeRecord and jokeLast.
 # Planned functionality
