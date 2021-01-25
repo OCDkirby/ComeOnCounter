@@ -5,79 +5,45 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="231.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="231.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Controller">
    <bottom>
       <Button fx:id="save" mnemonicParsing="false" onAction="#handleButtonAction" text="Save" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets bottom="10.0" top="10.0" />
+            <Insets bottom="10.0" />
          </BorderPane.margin>
          <font>
             <Font size="14.0" />
          </font></Button>
    </bottom>
-   <left>
-      <VBox alignment="CENTER" prefHeight="165.0" prefWidth="200.0" spacing="8.0" BorderPane.alignment="CENTER">
-         <Label text="&quot;Come on!&quot;">
-            <font>
-               <Font size="18.0"/>
-            </font>
-         </Label>
-         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="300.0" spacing="10.0">
-            <Label fx:id="comeOnRecordLabel" text="Record: x">
-               <font>
-                  <Font size="18.0"/>
-               </font>
-            </Label>
-            <Label fx:id="comeOnLastLabel" text="Last class: x">
-               <font>
-                  <Font size="18.0"/>
-               </font>
-            </Label>
-         </HBox>
-         <Label fx:id="comeOnCurrentLabel" text="Current: x">
-            <font>
-               <Font size="24.0"/>
-            </font>
-         </Label>
-         <Button fx:id="comeOn" mnemonicParsing="false" onAction="#handleButtonAction" text="Come on!">
-            <font>
-               <Font size="18.0"/>
-            </font>
-         </Button>
-      </VBox>
-   </left>
-   <right>
-      <VBox alignment="CENTER" prefHeight="165.0" prefWidth="200.0" spacing="8.0" BorderPane.alignment="CENTER">
-         <Label text="&quot;Gabriel!&quot;">
-            <font>
-               <Font size="18.0"/>
-            </font>
-         </Label>
-         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="300.0" spacing="10.0">
-            <Label fx:id="gabeRecordLabel" text="Record: x">
-               <font>
-                  <Font size="18.0"/>
-               </font>
-            </Label>
-            <Label fx:id="gabeLastLabel" text="Last class: x">
-               <font>
-                  <Font size="18.0"/>
-               </font>
-            </Label>
-         </HBox>
-         <Label fx:id="gabeCurrentLabel" text="Current: x">
-            <font>
-               <Font size="24.0"/>
-            </font>
-         </Label>
-         <Button fx:id="gabe" mnemonicParsing="false" onAction="#handleButtonAction" text="Gabriel!">
-            <font>
-               <Font size="18.0"/>
-            </font>
-         </Button>
-      </VBox>
-   </right>
    <center>
-      <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+      <VBox alignment="CENTER" prefHeight="165.0" prefWidth="200.0" spacing="8.0" BorderPane.alignment="CENTER">
+         <Label text="*Corny Joke*">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
+         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="300.0" spacing="10.0">
+            <Label fx:id="laughRecordLabel" text="Record: x">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="laughLastLabel" text="Last class: x">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </HBox>
+         <Label fx:id="laughCurrentLabel" text="Current: x">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+         <Button fx:id="laugh" mnemonicParsing="false" onAction="#handleButtonAction" text="*laugh*">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+      </VBox>
    </center>
 </BorderPane>

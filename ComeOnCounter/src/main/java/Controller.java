@@ -18,24 +18,16 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable
 {
-    private int comeOnRecord = 0;
-    private int comeOnLast = 0;
-    private int comeOnCurrent = 0;
-    private int gabeRecord = 0;
-    private int gabeLast = 0;
-    private int gabeCurrent = 0;
+    private int laughRecord = 0;
+    private int laughLast = 0;
+    private int laughCurrent = 0;
 
     private File file;
 
-    public Label comeOnRecordLabel;
-    public Label comeOnLastLabel;
-    public Label comeOnCurrentLabel;
-    public Button comeOn;
-
-    public Label gabeRecordLabel;
-    public Label gabeLastLabel;
-    public Label gabeCurrentLabel;
-    public Button gabe;
+    public Label laughRecordLabel;
+    public Label laughLastLabel;
+    public Label laughCurrentLabel;
+    public Button laugh;
 
     public Button save;
 
@@ -52,23 +44,17 @@ public class Controller implements Initializable
                 BufferedReader br = new BufferedReader(new InputStreamReader(in));
                 String crec = br.readLine();
                 String cl = br.readLine();
-                String grec = br.readLine();
-                String gl = br.readLine();
 
                 br.close();
                 in.close();
 
-                comeOnRecord = Integer.parseInt(crec);
-                comeOnLast = Integer.parseInt(cl);
-                gabeRecord = Integer.parseInt(grec);
-                gabeLast = Integer.parseInt(gl);
+                laughRecord = Integer.parseInt(crec);
+                laughLast = Integer.parseInt(cl);
             }
             else
             {
-                comeOnRecord = 18;
-                comeOnLast = 15;
-                gabeRecord = 0;
-                gabeLast = 0;
+                laughRecord = 0;
+                laughLast = 0;
             }
         }
         catch(IOException e)
@@ -76,13 +62,9 @@ public class Controller implements Initializable
             e.printStackTrace();
         }
 
-        comeOnRecordLabel.setText("Record: " + comeOnRecord);
-        comeOnLastLabel.setText("Last class: " + comeOnLast);
-        comeOnCurrentLabel.setText("Current: " + comeOnCurrent);
-        
-        gabeRecordLabel.setText("Record: " + gabeRecord);
-        gabeLastLabel.setText("Last class: " + gabeLast);
-        gabeCurrentLabel.setText("Current: " + gabeCurrent);
+        laughRecordLabel.setText("Record: " + laughRecord);
+        laughLastLabel.setText("Last class: " + laughLast);
+        laughCurrentLabel.setText("Current: " + laughCurrent);
     }
 
     public void saveToFile()
@@ -91,32 +73,18 @@ public class Controller implements Initializable
         {
             PrintWriter out = new PrintWriter(file);
 
-            if(comeOnCurrent != 0)
+            if(laughCurrent != 0)
             {
-                if(comeOnCurrent > comeOnRecord)
-                    comeOnRecord = comeOnCurrent;
+                if(laughCurrent > laughRecord)
+                    laughRecord = laughCurrent;
 
-                out.println(comeOnRecord);
-                out.println(comeOnCurrent);
+                out.println(laughRecord);
+                out.println(laughCurrent);
             }
             else
             {
-                out.println(comeOnRecord);
-                out.println(comeOnLast);
-            }
-
-            if(gabeCurrent != 0)
-            {
-                if(gabeCurrent > gabeRecord)
-                    gabeRecord = gabeCurrent;
-
-                out.println(gabeRecord);
-                out.print(gabeCurrent);
-            }
-            else
-            {
-                out.println(gabeRecord);
-                out.println(gabeLast);
+                out.println(laughRecord);
+                out.println(laughLast);
             }
 
             out.close();
@@ -129,39 +97,24 @@ public class Controller implements Initializable
 
     public void handleButtonAction(ActionEvent event)
     {
-        if(event.getSource() == comeOn)
+        if(event.getSource() == laugh)
         {
-            comeOnCurrent++;
-            comeOnCurrentLabel.setText("Current: " + comeOnCurrent);
-        }
-        else if(event.getSource() == gabe)
-        {
-            gabeCurrent++;
-            gabeCurrentLabel.setText("Current: " + gabeCurrent);
+            laughCurrent++;
+            laughCurrentLabel.setText("Current: " + laughCurrent);
         }
         else if(event.getSource() == save)
         {
             saveToFile();
 
-            if(comeOnCurrent != 0)
+            if(laughCurrent != 0)
             {
-                comeOnLast = comeOnCurrent;
-            }
-            
-            if(gabeCurrent != 0)
-            {
-                gabeLast = gabeCurrent;
+                laughLast = laughCurrent;
             }
 
-            comeOnRecordLabel.setText("Record: " + comeOnRecord);
-            comeOnLastLabel.setText("Last class: " + comeOnLast);
-            comeOnCurrent = 0;
-            comeOnCurrentLabel.setText("Current: " + comeOnCurrent);
-            
-            gabeRecordLabel.setText("Record: " + gabeRecord);
-            gabeLastLabel.setText("Last class: " + gabeLast);
-            gabeCurrent = 0;
-            gabeCurrentLabel.setText("Current: " + gabeCurrent);
+            laughRecordLabel.setText("Record: " + laughRecord);
+            laughLastLabel.setText("Last class: " + laughLast);
+            laughCurrent = 0;
+            laughCurrentLabel.setText("Current: " + laughCurrent);
         }
     }
 }

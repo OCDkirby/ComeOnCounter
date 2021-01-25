@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/resources/main_gui.fxml"));
         Parent root = loader.load();
-        primaryStage.setTitle("'Come on!' counter");
+        primaryStage.setTitle("Corny Joke Counter");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
 
