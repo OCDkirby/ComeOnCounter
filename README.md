@@ -8,4 +8,4 @@ The Corny Joke Counter for the bored people in Data Structures.
 * Windows (?)
 * Java 8 update 112
 # Releases
-* TBA
+* [Release 1.0 (1/24/2021)](https://github.com/OCDkirby/ComeOnCounter/releases/tag/1.0) - Initial Release
